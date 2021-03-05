@@ -1,0 +1,407 @@
+import { Injectable } from '@angular/core';
+import * as mapboxgl from 'mapbox-gl';
+import { environment } from "../environments/environment";
+import IndiaState from './geo.json';
+import { MapDataService } from './map-data.service';
+import CategoryData from './mapCategory.json'
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class MapService {
+    map: mapboxgl.Map;
+    //style = 'mapbox://styles/mapbox/streets-v11';
+    style = 'mapbox://styles/mapbox/light-v10';
+    lat = 40.584978;
+    lng = -121.353637;
+    hoveredStateId = null;
+    animation = { duration: 5000 }
+    zoom = 0
+    movingMethod = 'easeTo'
+    tempFun: any = {}
+    response
+
+    constructor(private mapData: MapDataService, private http: HttpClient) {
+        mapboxgl.accessToken = environment.mapbox.accessToken;
+    }
+
+    getConfig() {
+        return this.http.get('assets/mapCategory.json')
+    }
+
+
+
+    buildMap() {
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        // function random_rgba() {
+        //     var o = Math.round, r = Math.random, s = 255;
+        //     return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+        //}
+        function random_rgba() {
+            var o = Math.round, r = Math.random, s = 255;
+            return 'rgba(' + 66 + ',' + 133 + ',' + 244 + ',' + r().toFixed(1) + ')';
+        }
+
+        let stateArr = []
+        let viewsArr = []
+        IndiaState['features'].map((data, i) => {
+            stateArr.push(data['properties'].name.toLowerCase())
+            let total = 0
+            CategoryData.filter((data,indx)=>{
+                if(stateArr[i] == data.state){
+                    total = total + data.views
+                    
+                }
+            })
+            viewsArr.push(total)
+        })
+        console.log({viewsArr})
+
+        var colorArr = [
+            'interpolate',
+            ['linear'],
+            ['get', 'fid'],
+        ]
+        var length = IndiaState['features'].length
+        IndiaState['features'].map((data, i) => {
+
+            colorArr.push(data['properties'].fid, random_rgba())
+        })
+
+        //  CategoryData.map((data, i) => IndiaState['features'].push(data))
+
+
+
+     
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: this.style,
+            zoom: this.zoom,
+            center: [77.4126, 23.2599],
+            animation: this.animation,
+            movingMethod: this.movingMethod,
+            animate: true,
+            pitch: 60,
+            bearing: -60,
+
+
+        })
+        var hoveredStateId = null;
+        var start = [77.4126, 23.2599]
+        var target = start;
+        let configUrl = 'assets/mapCategory.json';
+        var categoryData
+
+        //fetch state data
+        fetch(configUrl).then(response => response.json())
+            .then(data => {
+                categoryData = data
+            })
+
+
+
+
+
+
+        map.on('load', function () {
+            //adding country India Json source data
+            map.addSource('india_source_1', {
+                'type': 'geojson',
+                'data': IndiaState
+            });
+
+
+            //adding layer for state
+
+            map.addLayer({
+                'id': 'india_fill_layer_1',
+                'type': 'fill',
+                'source': 'india_source_1',
+                'layout': {},
+                'zoom': 2,
+                'paint': {
+                    //'fill-color': '#28527a',
+                    // 'fill-color': [
+
+                    //     'interpolate',
+                    //     ['linear'],
+                    //     ['get', 'fid'],
+                    //     1, 'red', 2, "#dfbe92", 10, '#ffc262'
+
+
+
+                    // ],
+                    'fill-color': colorArr,
+                    'fill-opacity': [
+                        'case',
+                        ['boolean', ['feature-state', 'hover'], false],
+                        0.5,
+                        0.7
+                    ],
+                    //   'fill-opacity': 0.6
+
+
+                },
+
+
+                'filter': ['==', '$type', 'Polygon']
+            });
+
+
+            //state border Layer
+            map.addLayer({
+                'id': 'india_line_layer_1',
+                'type': 'line',
+                'source': 'india_source_1',
+
+                'paint': {
+                    'line-color': '#4285f4',
+                    'line-width': 1
+                },
+
+                //   'filter': ['==', '$type', 'Point']
+            });
+
+
+
+
+            map.flyTo({
+                center: target,
+                zoom: 4,
+                bearing: 0,
+                pitch: 0,
+                speed: 0.7, // make the flying slow
+                curve: 1, // change the speed at which it zooms out
+                easing: function (t) {
+                    return t;
+                },
+                essential: true
+            });
+
+
+
+        });
+        var popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false,
+
+        });
+
+        map.on('mouseenter', 'category', function (e) {
+
+            function capitalizeFirstLetter(text) {
+                return Array.isArray(text)
+                    ? text.map((val) => {
+                        return val.charAt(0).toUpperCase() + val.slice(1);
+                    })
+                    : text.charAt(0).toUpperCase() + text.slice(1);
+            };
+
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            var clickPoint = map.queryRenderedFeatures(e.point)
+
+            // Change the cursor style as a UI indicator.
+
+            map.getCanvas().style.cursor = 'pointer';
+
+            var coordinates = e.features[0].geometry.coordinates.slice();
+            var category: any = clickPoint[0].properties.categoryName;
+            var city = capitalizeFirstLetter(clickPoint[0].properties.cityName)
+            var views = numberWithCommas(clickPoint[0].properties.views)
+
+            let toolTip = `<div class="tooltip-container"><h3  style="font-weight: 700;color: #454648e8;">${city}</h3><p style="font-weight: 600;font-size:0.8rem;color:#696969;">${category} <strong>:</strong>  ${views}</p></div>`
+
+
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            popup.setLngLat(coordinates).setHTML(toolTip).addTo(map);
+
+        });
+
+        map.on('mouseleave', 'category', function () {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+        });
+
+        map.on('click', 'india_fill_layer_1', function (e) {
+
+
+
+            if (e.features.length > 0) {
+                map.flyTo({
+                    center: [e.lngLat.lng, e.lngLat.lat],
+                    zoom: 6,
+                    bearing: 0,
+                    speed: 0.8, // make the flying slow
+                    curve: 1, // change the speed at which it zooms out
+                    easing: function (t) {
+                        return t;
+                    },
+                    essential: true
+                });
+            }
+
+
+
+
+
+
+
+
+
+        });
+
+
+        map.on('click', 'india_fill_layer_1', function (e) {
+            map.removeLayer('category')
+            map.removeLayer('india_fill_layer_2')
+            map.removeLayer('india_line_layer_2')
+            var GeoJson = IndiaState
+
+
+            GeoJson['features'].splice(length, GeoJson['features'].length)
+
+
+
+            var clickPoint = map.queryRenderedFeatures(e.point)
+            let geoState = clickPoint[0].properties.name.toLowerCase()
+
+
+            let stateName = IndiaState['features'].filter(obj => obj.properties.name.toLowerCase() == geoState)
+            stateName[0].type = "Point"
+
+
+
+            // for (let j = 0; j < categoryData.length; j++) {
+
+            //     if (categoryData[j].state == geoState) {
+
+            //         let tempObj = {
+            //             'type': 'Feature',
+            //             'id': j,
+            //             'properties': {
+            //                 'categoryName': categoryData[j].category,
+            //                 'stateName': categoryData[j].state,
+            //                 'countryName': categoryData[j].country,
+            //                 'cityName': categoryData[j].city,
+            //                 'views': categoryData[j].views
+            //             },
+            //             'geometry': {
+            //                 'type': 'Point',
+            //                 'coordinates': [categoryData[j].lan, categoryData[j].lat],
+
+            //             }
+            //         }
+            //         GeoJson['features'].push(tempObj)
+
+            //     }
+            // }
+
+            categoryData.filter((obj, indx) => {
+                if (obj.state == geoState) {
+                    let tempObj = {
+                        'type': 'Feature',
+                        'id': indx,
+                        'properties': {
+                            'categoryName': obj.category,
+                            'stateName': obj.state,
+                            'countryName': obj.country,
+                            'cityName': obj.city,
+                            'views': obj.views
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [obj.lan, obj.lat],
+
+                        }
+                    }
+                    GeoJson['features'].push(tempObj)
+                }
+            })
+
+
+            map.getSource('india_source_1').setData(GeoJson)
+            map.addLayer({
+                'id': 'india_fill_layer_2',
+                'type': 'fill',
+                'source': 'india_source_1',
+                'layout': {},
+                'zoom': 2,
+                'paint': {
+                    'fill-color': '#1687a7',
+                    'fill-opacity': 0.5
+                },
+
+                'filter': ['==', ['get', 'name'], clickPoint[0].properties.name]
+            });
+
+            map.addLayer({
+                'id': 'category',
+                'type': 'circle',
+                'source': 'india_source_1',
+                'paint': {
+                    'circle-color': '#f4d160',
+                },
+                'filter': ['==', '$type', 'Point']
+            });
+
+            map.addLayer({
+                'id': 'india_line_layer_2',
+                'type': 'line',
+                'source': 'india_source_1',
+                'paint': {
+                    'line-color': '#0d335d',
+                    'line-width': 1
+                },
+
+                'filter': ['==', ['get', 'name'], clickPoint[0].properties.name]
+            });
+
+
+        });
+        map.on('mousemove', 'india_fill_layer_1', function (e) {
+            if (e.features.length > 0) {
+                if (hoveredStateId) {
+                    map.setFeatureState(
+                        { source: 'india_source_1', id: hoveredStateId },
+                        { hover: false }
+                    );
+                }
+                hoveredStateId = e.features[0].id;
+                map.setFeatureState(
+                    { source: 'india_source_1', id: hoveredStateId },
+                    { hover: true }
+                );
+            }
+        });
+
+        map.on('mouseleave', 'india_fill_layer_1', function () {
+            if (hoveredStateId) {
+                map.setFeatureState(
+                    { source: 'india_source_1', id: hoveredStateId },
+                    { hover: false }
+                );
+            }
+            hoveredStateId = null;
+        });
+
+
+        // this.map.addControl(new mapboxgl.NavigationControl());
+    }
+
+
+
+}
