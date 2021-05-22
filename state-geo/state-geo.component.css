@@ -1,0 +1,7 @@
+#geo {
+    width: 352px;
+    height: 191px;
+    }
+  .mapboxgl-ctrl-bottom-left{
+    display: none !important;
+  }
