@@ -1,0 +1,62 @@
+[
+  [{
+        "category": "cat-1",
+        "city": "rajahmundry",
+        "state": "andhra pradesh",
+        "id": 6,
+        "country": "india",
+        "lat": 17.004393,
+        "lan": 81.783325,
+        "views": 492
+    },
+    {
+        "category": "cat-2",
+        "city": "guntur",
+        "state": "andhra pradesh",
+        "id": 5,
+        "country": "india",
+        "lat": 16.314209,
+        "lan": 80.435028,
+        "views": 2123
+    },
+    {
+        "category": "cat-3",
+        "city": "srinagar",
+        "state": "jammu and kashmir",
+        "id":4 ,
+        "country": "india",
+        "lat": 34.083656,
+        "lan": 74.797371,
+        "views": 5523
+    },
+    {
+        "category": "cat-4",
+        "city": "jaunpur",
+        "state": "uttar pradesh",
+        "id": 3,
+        "country": "india",
+        "lat": 25.748695,
+        "lan": 82.698441,
+        "views": 2066
+    },
+    {
+        "category": "cat-5",
+        "city": "dallas",
+      "id":2,
+        "state": "",
+        "country": "united states",
+        "lat": 32.7936,
+        "lan": -96.7662,
+        "views": 69
+    },
+    {
+        "category": "cat-6",
+        "city": "hisar",
+        "state": "",
+      "id":1,
+        "country": "india",
+        "lat": 29.17,
+        "lan": 75.725,
+        "views": 406
+    },
+   ]
