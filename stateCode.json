@@ -1,0 +1,217 @@
+[{
+        "id": 1,
+        "type": "Feature",
+        "name": "Andaman and Nicobar",
+        "views": 1000
+    },
+    {
+        "id": 2,
+        "type": "Feature",
+        "name": "Andhra Pradesh",
+        "views": 100
+    },
+    {
+        "id": 3,
+        "type": "Feature",
+        "name": "Arunachal Pradesh",
+        "views": 1554
+    },
+    {
+        "id": 4,
+        "type": "Feature",
+        "name": "Assam",
+        "views": 5000
+    },
+    {
+        "id": 5,
+        "type": "Feature",
+        "name": "Bihar",
+        "views": 605
+    },
+    {
+        "id": 6,
+        "type": "Feature",
+        "name": "Chandigarh",
+        "views": 10
+    },
+    {
+        "id": 7,
+        "type": "Feature",
+        "name": "Chhattisgarh",
+        "views": 10090
+    },
+    {
+        "id": 8,
+        "type": "Feature",
+        "name": "Dadra and Nagar Haveli",
+        "views": 9048
+    },
+    {
+        "id": 9,
+        "type": "Feature",
+        "name": "Daman and Diu",
+        "views": 657
+    },
+    {
+        "id": 10,
+        "type": "Feature",
+        "name": "Goa",
+        "views": 5946
+    },
+    {
+        "id": 11,
+        "type": "Feature",
+        "name": "Gujarat",
+        "views": 46687
+    },
+    {
+        "id": 12,
+        "type": "Feature",
+        "name": "Haryana",
+        "views": 865
+    },
+    {
+        "id": 13,
+        "type": "Feature",
+        "name": "Himachal Pradesh",
+        "views": 8676413
+    },
+    {
+        "id": 14,
+        "type": "Feature",
+        "name": "Jammu and Kashmir",
+        "views": 974965
+    },
+    {
+        "id": 15,
+        "type": "Feature",
+        "name": "Jharkhand",
+        "views": 7846
+    },
+    {
+        "id": 16,
+        "type": "Feature",
+        "name": "Karnataka",
+        "views": 65468
+    },
+    {
+        "id": 17,
+        "type": "Feature",
+        "name": "Kerala",
+        "views": 6879
+    },
+    {
+        "id": 18,
+        "type": "Feature",
+        "name": "Lakshadweep",
+        "views": 68562
+    },
+    {
+        "id": 19,
+        "type": "Feature",
+        "name": "Madhya Pradesh",
+        "views": 484855
+    },
+    {
+        "id": 20,
+        "type": "Feature",
+        "name": "Maharashtra",
+        "views": 8753
+    },
+    {
+        "id": 21,
+        "type": "Feature",
+        "name": "Manipur",
+        "views": 9575
+    },
+    {
+        "id": 22,
+        "type": "Feature",
+        "name": "Meghalaya",
+        "views": 987653
+    },
+    {
+        "id": 23,
+        "type": "Feature",
+        "name": "Mizoram",
+        "views": 67653
+    },
+    {
+        "id": 24,
+        "type": "Feature",
+        "name": "Nagaland",
+        "views": 35463
+    },
+    {
+        "id": 25,
+        "type": "Feature",
+        "name": "NCT of Delhi",
+        "views": 5363
+    },
+    {
+        "id": 26,
+        "type": "Feature",
+        "name": "Odisha",
+        "views": 5665
+    },
+    {
+        "id": 27,
+        "type": "Feature",
+        "name": "Puducherry",
+        "views": 3468
+    },
+    {
+        "id": 28,
+        "type": "Feature",
+        "name": "Punjab",
+        "views": 53463
+    },
+    {
+        "id": 29,
+        "type": "Feature",
+        "name": "Rajasthan",
+        "views": 23465
+    },
+    {
+        "id": 30,
+        "type": "Feature",
+        "name": "Sikkim",
+        "views": 56463
+    },
+    {
+        "id": 31,
+        "type": "Feature",
+        "name": "Tamil Nadu",
+        "views": 63
+    },
+    {
+        "id": 32,
+        "type": "Feature",
+        "name": "Telangana",
+        "views": 684
+    },
+    {
+        "id": 33,
+        "type": "Feature",
+        "name": "Tripura",
+        "views": 5463
+    },
+    {
+        "id": 34,
+        "type": "Feature",
+        "name": "Uttar Pradesh",
+        "views": 36
+    },
+    {
+        "id": 35,
+        "type": "Feature",
+        "name": "Uttarakhand",
+        "views": 68763
+    },
+    {
+        "id": 36,
+        "type": "Feature",
+        "name": "West Bengal",
+        "views": 956
+    }
+]
