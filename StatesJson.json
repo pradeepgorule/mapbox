@@ -1,0 +1,218 @@
+[
+    {
+        "stateId": 1,
+        "type": "Feature",
+        "stateName": "Andaman and Nicobar",
+        "userData": 1000
+    },
+    {
+        "stateId": 2,
+        "type": "Feature",
+        "stateName": "Andhra Pradesh",
+        "userData": 100
+    },
+    {
+        "stateId": 3,
+        "type": "Feature",
+        "stateName": "Arunachal Pradesh",
+        "userData": 1554
+    },
+    {
+        "stateId": 4,
+        "type": "Feature",
+        "stateName": "Assam",
+        "userData": 5000
+    },
+    {
+        "stateId": 5,
+        "type": "Feature",
+        "stateName": "Bihar",
+        "userData": 605
+    },
+    {
+        "stateId": 6,
+        "type": "Feature",
+        "stateName": "Chandigarh",
+        "userData": 10
+    },
+    {
+        "stateId": 7,
+        "type": "Feature",
+        "stateName": "Chhattisgarh",
+        "userData": 10090
+    },
+    {
+        "stateId": 8,
+        "type": "Feature",
+        "stateName": "Dadra and Nagar Haveli",
+        "userData": 9048
+    },
+    {
+        "stateId": 9,
+        "type": "Feature",
+        "stateName": "Daman and Diu",
+        "userData": 657
+    },
+    {
+        "stateId": 10,
+        "type": "Feature",
+        "stateName": "Goa",
+        "userData": 5946
+    },
+    {
+        "stateId": 11,
+        "type": "Feature",
+        "stateName": "Gujarat",
+        "userData": 46687
+    },
+    {
+        "stateId": 12,
+        "type": "Feature",
+        "stateName": "Haryana",
+        "userData": 865
+    },
+    {
+        "stateId": 13,
+        "type": "Feature",
+        "stateName": "Himachal Pradesh",
+        "userData": 8676413
+    },
+    {
+        "stateId": 14,
+        "type": "Feature",
+        "stateName": "Jammu and Kashmir",
+        "userData": 974965
+    },
+    {
+        "stateId": 15,
+        "type": "Feature",
+        "stateName": "Jharkhand",
+        "userData": 7846
+    },
+    {
+        "stateId": 16,
+        "type": "Feature",
+        "stateName": "Karnataka",
+        "userData": 65468
+    },
+    {
+        "stateId": 17,
+        "type": "Feature",
+        "stateName": "Kerala",
+        "userData": 6879
+    },
+    {
+        "stateId": 18,
+        "type": "Feature",
+        "stateName": "Lakshadweep",
+        "userData": 68562
+    },
+    {
+        "stateId": 19,
+        "type": "Feature",
+        "stateName": "Madhya Pradesh",
+        "userData": 484855
+    },
+    {
+        "stateId": 20,
+        "type": "Feature",
+        "stateName": "Maharashtra",
+        "userData": 8753
+    },
+    {
+        "stateId": 21,
+        "type": "Feature",
+        "stateName": "Manipur",
+        "userData": 9575
+    },
+    {
+        "stateId": 22,
+        "type": "Feature",
+        "stateName": "Meghalaya",
+        "userData": 987653
+    },
+    {
+        "stateId": 23,
+        "type": "Feature",
+        "stateName": "Mizoram",
+        "userData": 67653
+    },
+    {
+        "stateId": 24,
+        "type": "Feature",
+        "stateName": "Nagaland",
+        "userData": 35463
+    },
+    {
+        "stateId": 25,
+        "type": "Feature",
+        "stateName": "NCT of Delhi",
+        "userData": 5363
+    },
+    {
+        "stateId": 26,
+        "type": "Feature",
+        "stateName": "Odisha",
+        "userData": 5665
+    },
+    {
+        "stateId": 27,
+        "type": "Feature",
+        "stateName": "Puducherry",
+        "userData": 3468
+    },
+    {
+        "stateId": 28,
+        "type": "Feature",
+        "stateName": "Punjab",
+        "userData": 53463
+    },
+    {
+        "stateId": 29,
+        "type": "Feature",
+        "stateName": "Rajasthan",
+        "userData": 23465
+    },
+    {
+        "stateId": 30,
+        "type": "Feature",
+        "stateName": "Sikkim",
+        "userData": 56463
+    },
+    {
+        "stateId": 31,
+        "type": "Feature",
+        "stateName": "Tamil Nadu",
+        "userData": 63
+    },
+    {
+        "stateId": 32,
+        "type": "Feature",
+        "stateName": "Telangana",
+        "userData": 684
+    },
+    {
+        "stateId": 33,
+        "type": "Feature",
+        "stateName": "Tripura",
+        "userData": 5463
+    },
+    {
+        "stateId": 34,
+        "type": "Feature",
+        "stateName": "Uttar Pradesh",
+        "userData": 36
+    },
+    {
+        "stateId": 35,
+        "type": "Feature",
+        "stateName": "Uttarakhand",
+        "userData": 68763
+    },
+    {
+        "stateId": 36,
+        "type": "Feature",
+        "stateName": "West Bengal",
+        "userData": 956
+    }
+]
