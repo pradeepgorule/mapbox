@@ -11,7 +11,7 @@
             "type": "Feature",
             "properties": {
                 "id": "ak16994521",
-                "mag": 8.3,
+                "mag": 2.3,
                 "time": 1507425650893,
                 "felt": null,
                 "tsunami": 0
@@ -89,6 +89,108 @@
                 "coordinates": [
                     72.82867175872502,
                     19.005822029882783
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "ak16994521",
+                "mag": 1.2,
+                "time": 1507425650893,
+                "felt": null,
+                "tsunami": 0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    73.8596075609036,
+                    18.526453760243353
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "ak16994521",
+                "mag": 4,
+                "time": 1507425650893,
+                "felt": null,
+                "tsunami": 0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    74.22085877453974,
+                    16.692984348611386
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "ak16994521",
+                "mag": 6,
+                "time": 1507425650893,
+                "felt": null,
+                "tsunami": 0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    74.20339876285024,
+                    16.614125802721034
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "ak16994521",
+                "mag": 7,
+                "time": 1507425650893,
+                "felt": null,
+                "tsunami": 0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    74.31136519247424,
+                    16.5844174381181
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "ak16994521",
+                "mag": 10,
+                "time": 1507425650893,
+                "felt": null,
+                "tsunami": 0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    74.35091717979239,
+                    16.22790326919692
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "ak16994521",
+                "mag": 15,
+                "time": 1507425650893,
+                "felt": null,
+                "tsunami": 0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    74.20660555730439,
+                    16.11462632604506
                 ]
             }
         }
