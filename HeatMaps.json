@@ -1,10 +1,7 @@
 [
     {
         "properties": {
-            "id": "ak16994521",
-            "mag": 2.3,
-            "time": 1507425650893,
-            "tsunami": 0
+            "mag": 2.3
         },
         "geometry": {
             "type": "Point",
@@ -16,10 +13,7 @@
     },
     {
         "properties": {
-            "id": "ak16994521",
-            "mag": 5.3,
-            "time": 1507425650893,
-            "tsunami": 0
+            "mag": 5.3
         },
         "geometry": {
             "type": "Point",
@@ -31,10 +25,7 @@
     },
     {
         "properties": {
-            "id": "ak16994521",
-            "mag": 9.3,
-            "time": 1507425650893,
-            "tsunami": 0
+            "mag": 9.3
         },
         "geometry": {
             "type": "Point",
@@ -46,10 +37,7 @@
     },
     {
         "properties": {
-            "id": "ak16994521",
-            "mag": 1.3,
-            "time": 1507425650893,
-            "tsunami": 0
+            "mag": 1.3
         },
         "geometry": {
             "type": "Point",
@@ -61,10 +49,7 @@
     },
     {
         "properties": {
-            "id": "ak16994521",
-            "mag": 10,
-            "time": 1507425650893,
-            "tsunami": 0
+            "mag": 10
         },
         "geometry": {
             "type": "Point",
@@ -76,10 +61,7 @@
     },
     {
         "properties": {
-            "id": "ak16994521",
-            "mag": 1.2,
-            "time": 1507425650893,
-            "tsunami": 0
+            "mag": 1.2
         },
         "geometry": {
             "type": "Point",
@@ -91,10 +73,7 @@
     },
     {
         "properties": {
-            "id": "ak16994521",
-            "mag": 4,
-            "time": 1507425650893,
-            "tsunami": 0
+            "mag": 4
         },
         "geometry": {
             "type": "Point",
@@ -106,10 +85,7 @@
     },
     {
         "properties": {
-            "id": "ak16994521",
-            "mag": 6,
-            "time": 1507425650893,
-            "tsunami": 0
+            "mag": 6
         },
         "geometry": {
             "type": "Point",
@@ -121,10 +97,7 @@
     },
     {
         "properties": {
-            "id": "ak16994521",
-            "mag": 7,
-            "time": 1507425650893,
-            "tsunami": 0
+            "mag": 7
         },
         "geometry": {
             "type": "Point",
@@ -136,10 +109,7 @@
     },
     {
         "properties": {
-            "id": "ak16994521",
-            "mag": 10,
-            "time": 1507425650893,
-            "tsunami": 0
+            "mag": 10
         },
         "geometry": {
             "type": "Point",
@@ -151,10 +121,7 @@
     },
     {
         "properties": {
-            "id": "ak16994521",
-            "mag": 15,
-            "time": 1507425650893,
-            "tsunami": 0
+            "mag": 15
         },
         "geometry": {
             "type": "Point",
